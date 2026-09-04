@@ -94,7 +94,7 @@
     oklch(0.97 0.025 230) 50%,
     oklch(0.98 0.03 90) 100%
   );
-  --gradient-brand: linear-gradient(135deg, var(--lilac), var(--rose));
+  --gradient-brand: linear-gradient(135deg, oklch(0.63 0.16 295), oklch(0.66 0.16 352));
 }
 
 @layer base {
