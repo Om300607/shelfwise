@@ -11,7 +11,10 @@ export default defineConfig({
     }),
     tailwindcss(),
     tanstackStart({
-      server: { entry: "src/server.ts" },
+      server: {
+        entry: "src/server.ts",
+        preset: "vercel",
+      },
     }),
     viteReact(),
   ],
