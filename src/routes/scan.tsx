@@ -198,7 +198,7 @@ function ScanPage() {
             />
             <button
               onClick={() => lookup(manualId)}
-              className="rounded-2xl bg-lilac/60 px-4 py-2 text-sm font-bold"
+              className="shrink-0 whitespace-nowrap rounded-2xl bg-lilac/60 px-4 py-2 text-sm font-bold"
             >
               Look up
             </button>
