@@ -231,7 +231,7 @@ export function issueBook(input: {
   return tx;
 }
 
-export function returnBook(input: { bookId: string; borrowerId?: string }): Transaction {
+export function returnBook(input: { bookId: string; borrowerId?: string | undefined }): Transaction {
   const data = read();
   const book = data.books.find(
     (b) => b.bookId.toLowerCase() === input.bookId.trim().toLowerCase(),
