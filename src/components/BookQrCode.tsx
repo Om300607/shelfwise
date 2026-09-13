@@ -29,13 +29,7 @@ export function BookQrCode({
   }, [bookId, size]);
 
   if (!src) {
-    return (
-      <div
-        className={className}
-        style={{ width: size, height: size }}
-        aria-hidden
-      />
-    );
+    return <div className={className} style={{ width: size, height: size }} aria-hidden />;
   }
 
   return (

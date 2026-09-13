@@ -23,9 +23,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             </span>
             <span className="block">
               <span className="block font-display text-lg leading-none">Shelfwise</span>
-              <span className="block text-xs text-ink-soft">
-                Issue &amp; return, made breezy
-              </span>
+              <span className="block text-xs text-ink-soft">Issue &amp; return, made breezy</span>
             </span>
           </Link>
 

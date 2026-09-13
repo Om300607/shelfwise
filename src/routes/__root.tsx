@@ -55,8 +55,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          
-           <a href="/"
+
+          <a
+            href="/"
             className="glass-panel-sm inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-bold"
           >
             Go home

@@ -189,9 +189,7 @@ export function issueBook(input: {
   loanDays?: number;
 }): Transaction {
   const data = read();
-  const book = data.books.find(
-    (b) => b.bookId.toLowerCase() === input.bookId.trim().toLowerCase(),
-  );
+  const book = data.books.find((b) => b.bookId.toLowerCase() === input.bookId.trim().toLowerCase());
   if (!book) throw new Error(`Unknown book ID: ${input.bookId}`);
   if (!input.borrowerName.trim()) throw new Error("Borrower name is required.");
   if (!input.borrowerId.trim()) throw new Error("Borrower ID is required.");
@@ -231,11 +229,12 @@ export function issueBook(input: {
   return tx;
 }
 
-export function returnBook(input: { bookId: string; borrowerId?: string | undefined }): Transaction {
+export function returnBook(input: {
+  bookId: string;
+  borrowerId?: string | undefined;
+}): Transaction {
   const data = read();
-  const book = data.books.find(
-    (b) => b.bookId.toLowerCase() === input.bookId.trim().toLowerCase(),
-  );
+  const book = data.books.find((b) => b.bookId.toLowerCase() === input.bookId.trim().toLowerCase());
   if (!book) throw new Error(`Unknown book ID: ${input.bookId}`);
 
   const openTxs = data.transactions.filter((t) => t.bookUid === book.id && !t.returnedAt);
@@ -243,9 +242,7 @@ export function returnBook(input: { bookId: string; borrowerId?: string | undefi
     throw new Error(`"${book.title}" is not currently issued.`);
   }
   const target = input.borrowerId
-    ? openTxs.find(
-        (t) => t.borrowerId.toLowerCase() === input.borrowerId!.trim().toLowerCase(),
-      )
+    ? openTxs.find((t) => t.borrowerId.toLowerCase() === input.borrowerId!.trim().toLowerCase())
     : openTxs[0];
   if (!target) {
     throw new Error(`No open loan for borrower ${input.borrowerId}.`);
