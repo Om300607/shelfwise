@@ -45,10 +45,10 @@ export function AppShell({ children }: { children: ReactNode }) {
 
           <div className="flex items-center gap-3">
             <span className="grid size-10 place-items-center rounded-full bg-lilac/50 font-display text-sm">
-              MO
+              O
             </span>
             <span className="block leading-tight">
-              <span className="block text-sm font-extrabold">Mia Okafor</span>
+              <span className="block text-sm font-extrabold">Om</span>
               <span className="block text-xs text-ink-soft">Front desk</span>
             </span>
           </div>
