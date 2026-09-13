@@ -95,7 +95,10 @@ function Catalog() {
       />
 
       {showForm && (
-        <form onSubmit={submit} className="glass-panel mt-5 grid gap-3 rounded-3xl p-5 sm:grid-cols-2">
+        <form
+          onSubmit={submit}
+          className="glass-panel mt-5 grid gap-3 rounded-3xl p-5 sm:grid-cols-2"
+        >
           <label className="block text-sm font-bold sm:col-span-2">
             Title
             <input

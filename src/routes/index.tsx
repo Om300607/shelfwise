@@ -191,10 +191,7 @@ function Dashboard() {
           </div>
           <div className="mt-4 space-y-2.5">
             {stats.recent.map((t) => (
-              <div
-                key={t.id}
-                className="flex items-center gap-3 rounded-2xl bg-background/70 p-3"
-              >
+              <div key={t.id} className="flex items-center gap-3 rounded-2xl bg-background/70 p-3">
                 <span
                   className={`grid size-9 place-items-center rounded-xl text-sm ${
                     t.returnedAt ? "bg-mint/50" : "bg-lilac/40"
@@ -207,8 +204,7 @@ function Dashboard() {
                     {t.returnedAt ? "Returned" : "Issued"} · {t.title}
                   </span>
                   <span className="block text-xs text-ink-soft">
-                    {t.borrowerName} ·{" "}
-                    {new Date(t.returnedAt ?? t.issuedAt).toLocaleString()}
+                    {t.borrowerName} · {new Date(t.returnedAt ?? t.issuedAt).toLocaleString()}
                   </span>
                 </span>
               </div>

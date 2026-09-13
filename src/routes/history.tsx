@@ -131,11 +131,7 @@ function History() {
                   <td className="px-4 py-3 text-right">
                     <span
                       className={`rounded-full px-2.5 py-1 text-xs font-bold ${
-                        t.returnedAt
-                          ? "bg-mint/70"
-                          : late > 0
-                            ? "bg-rose/70"
-                            : "bg-butter/70"
+                        t.returnedAt ? "bg-mint/70" : late > 0 ? "bg-rose/70" : "bg-butter/70"
                       }`}
                     >
                       {t.returnedAt

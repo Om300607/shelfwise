@@ -34,9 +34,7 @@ function ScanPage() {
   const [loanDays, setLoanDays] = useState("14");
   const scannerRef = useRef<{ stop: () => Promise<void>; clear: () => void } | null>(null);
 
-  const openLoans = book
-    ? transactions.filter((t) => t.bookUid === book.id && !t.returnedAt)
-    : [];
+  const openLoans = book ? transactions.filter((t) => t.bookUid === book.id && !t.returnedAt) : [];
 
   function lookup(code: string) {
     const found = findByBookId(code);
@@ -86,9 +84,7 @@ function ScanPage() {
       scannerRef.current = null;
       setScanning(false);
       toast.error(
-        err instanceof Error
-          ? `Camera unavailable: ${err.message}`
-          : "Could not start the camera",
+        err instanceof Error ? `Camera unavailable: ${err.message}` : "Could not start the camera",
       );
     }
   }
@@ -156,7 +152,10 @@ function ScanPage() {
           </div>
 
           <div className="relative mt-4 aspect-square overflow-hidden rounded-3xl bg-ink">
-            <div id="qr-reader" className="absolute inset-0 [&_video]:size-full [&_video]:object-cover" />
+            <div
+              id="qr-reader"
+              className="absolute inset-0 [&_video]:size-full [&_video]:object-cover"
+            />
             {!scanning && (
               <div className="absolute inset-0 grid place-items-center px-6 text-center">
                 <p className="text-xs font-bold uppercase tracking-[0.15em] text-background/70">
@@ -210,8 +209,7 @@ function ScanPage() {
 
           {!book ? (
             <p className="mt-4 text-sm text-ink-soft">
-              Nothing scanned yet. Start the camera or look up a book ID to issue or
-              return a copy.
+              Nothing scanned yet. Start the camera or look up a book ID to issue or return a copy.
             </p>
           ) : (
             <>
